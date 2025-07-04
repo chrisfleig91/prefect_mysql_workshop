@@ -1,0 +1,82 @@
+[
+    {
+        "kundennr": 3001,
+        "vorname": "Marvin",
+        "nachname": "Ott",
+        "email": "marvin.ott@example.net",
+        "geschlecht": "m",
+        "registriert_am": "2022-01-19",
+        "aktiv": true,
+        "adresse": {
+            "straße": "Kurze Straße 3",
+            "plz": "44137",
+            "ort": "Dortmund",
+            "land": "Deutschland"
+        },
+        "firma": "Ott Ventures"
+    },
+    {
+        "kundennr": 3002,
+        "vorname": "Selina",
+        "nachname": "Reuter",
+        "email": "selina.reuter@example.net",
+        "geschlecht": "w",
+        "registriert_am": "2023-07-11",
+        "aktiv": false,
+        "adresse": {
+            "straße": "Am Markt 7",
+            "plz": "06108",
+            "ort": "Halle",
+            "land": "Deutschland"
+        },
+        "firma": ""
+    },
+    {
+        "kundennr": 3003,
+        "vorname": "Jannis",
+        "nachname": "Thiel",
+        "email": "jannis.thiel@example.net",
+        "geschlecht": "m",
+        "registriert_am": "2021-05-23",
+        "aktiv": true,
+        "adresse": {
+            "straße": "Hauptstraße 55",
+            "plz": "99423",
+            "ort": "Weimar",
+            "land": "Deutschland"
+        },
+        "firma": "Thiel Solutions"
+    },
+    {
+        "kundennr": 3004,
+        "vorname": "Mira",
+        "nachname": "Kaufmann",
+        "email": "mira.kaufmann@example.net",
+        "geschlecht": "w",
+        "registriert_am": "2020-10-01",
+        "aktiv": true,
+        "adresse": {
+            "straße": "Bahnhofstraße 18",
+            "plz": "70173",
+            "ort": "Stuttgart",
+            "land": "Deutschland"
+        },
+        "firma": ""
+    },
+    {
+        "kundennr": 3005,
+        "vorname": "Robin",
+        "nachname": "Sauer",
+        "email": "robin.sauer@example.net",
+        "geschlecht": "d",
+        "registriert_am": "2023-03-15",
+        "aktiv": false,
+        "adresse": {
+            "straße": "Lindenallee 8",
+            "plz": "28195",
+            "ort": "Bremen",
+            "land": "Deutschland"
+        },
+        "firma": "Sauer Media"
+    }
+]

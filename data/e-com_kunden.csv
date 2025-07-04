@@ -1,0 +1,21 @@
+KundenID;Anrede;Vorname;Nachname;Email;Registrierungsdatum;Land;Aktiv;Firma;Ort;PLZ;Straße;Hausnummer
+1001;Frau;Anna;Müller;anna.mueller@example.com;2022-01-15;Deutschland;ja;Müller & Co GmbH;Berlin;10115;Friedrichstraße;123
+1002;Herr;Max;Schmidt;max.schmidt@example.com;2021-11-23;Deutschland;nein;;Hamburg;20095;Mönckebergstraße;45
+1003;Frau;Sophie;Fischer;sophie.fischer@example.com;2023-02-03;Österreich;ja;Fischer Mode OG;Wien;1010;Kärntner Straße;7
+1004;Herr;Lukas;Weber;lukas.weber@example.com;2020-06-12;Schweiz;ja;;Zürich;8001;Bahnhofstraße;88
+1005;Frau;Laura;Becker;laura.becker@example.com;2023-09-08;Deutschland;ja;Becker Consulting;München;80331;Sendlinger Straße;12
+1006;Herr;Tim;Neumann;tim.neumann@example.com;2021-03-19;Deutschland;nein;;Köln;50667;Hohe Straße;25
+1007;Frau;Julia;Hoffmann;julia.hoffmann@example.com;2022-12-01;Österreich;ja;Hoffmann KG;Linz;4020;Landstraße;3
+1008;Herr;Leon;Schneider;leon.schneider@example.com;2023-05-20;Deutschland;ja;;Dresden;01067;Prager Straße;14
+1009;Frau;Mia;Koch;mia.koch@example.com;2019-08-30;Schweiz;ja;Koch Design AG;Basel;4051;Spalenring;66
+1010;Herr;Ben;Richter;ben.richter@example.com;2022-10-10;Deutschland;ja;;Stuttgart;70173;Königstraße;99
+1011;Frau;Nina;Lang;nina.lang@example.com;2021-04-22;Deutschland;ja;Lang Software GmbH;Leipzig;04109;Marktstraße;17
+1012;Herr;Jonas;Franke;jonas.franke@example.com;2022-08-05;Deutschland;nein;;Bremen;28195;Domshof;6
+1013;Frau;Lena;Bauer;lena.bauer@example.com;2023-03-11;Österreich;ja;;Salzburg;5020;Getreidegasse;8
+1014;Herr;Philipp;Graf;philipp.graf@example.com;2020-12-30;Schweiz;nein;Graf IT AG;Bern;3001;Zytgloggelaube;22
+1015;Frau;Tina;Lorenz;tina.lorenz@example.com;2023-06-18;Deutschland;ja;;Nürnberg;90402;Karolinenstraße;31
+1016;Herr;Felix;Keller;felix.keller@example.com;2021-01-27;Deutschland;nein;;Essen;45127;Limbecker Platz;5
+1017;Frau;Clara;Meier;clara.meier@example.com;2022-09-14;Österreich;ja;Meier Handels GmbH;Graz;8010;Herrengasse;10
+1018;Herr;David;Winkler;david.winkler@example.com;2020-05-03;Schweiz;ja;;Luzern;6003;Hertensteinstrasse;2
+1019;Frau;Eva;Zimmermann;eva.zimmermann@example.com;2021-07-09;Deutschland;ja;Zimmermann Logistik;Hannover;30159;Georgstraße;88
+1020;Herr;Tom;Scholz;tom.scholz@example.com;2023-01-01;Deutschland;ja;;Dortmund;44135;Westenhellweg;15

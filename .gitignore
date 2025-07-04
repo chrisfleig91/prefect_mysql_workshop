@@ -1,0 +1,92 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+ENV/
+env/
+.env/
+.venv/
+
+# VSCode settings folder
+.vscode/
+
+# PyCharm
+.idea/
+
+# mypy
+.mypy_cache/
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Unit test / coverage reports
+.tox/
+.nox/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Ignore dotenv environment variable files
+.env
+
+# Ignore pipenv files
+Pipfile.lock
+
+# Docker files
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.*.yml
+docker-compose.*.yaml
+
+# Docker build files and directories
+**/Dockerfile.*
+**/.dockerignore
+**/.docker/
+.devcontainer/
+
+# Docker container logs
+docker.log
+container.log
+
+# Docker volumes (optional, depends on your setup)
+volumes/
+
+# Ignore node_modules (if any frontend in project)
+node_modules/
