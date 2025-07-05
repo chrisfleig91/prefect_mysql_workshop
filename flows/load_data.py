@@ -1,3 +1,5 @@
+import os
+
 from prefect import flow, task
 import pandas as pd
 import json
@@ -5,7 +7,7 @@ import mysql.connector
 
 # MySQL-Verbindungsdaten
 DB_CONFIG = {
-    "host": "localhost",
+    "host": "mysql",
     "user": "root",
     "password": "root",
     "database": "testdb",
@@ -13,50 +15,53 @@ DB_CONFIG = {
 
 
 @task
-def load_csv_to_mysql(csv_path) -> pd.DataFrame:
+def load_csv_to_mysql(path) -> pd.DataFrame:
     """
     loads csv from given path, with transformations to send to mysgl
     :param csv_path: file path for csv
     :return: transformed dataframe
     """
-    df = pd.read_csv(csv_path, sep=";")
-    df.rename(columns={"Anrede": "Geschlecht", "Email": "EMail", }, inplace=True)
+    df = pd.read_csv(path, sep=";", dtype={"PLZ": str})
+    df.rename(columns={"Anrede": "Geschlecht", "Email": "EMail", "Straße": "Strasse"}, inplace=True)
     print(df)
     df.loc[df["Geschlecht"] == "Herr", "Geschlecht"] = "m"
     df.loc[df["Geschlecht"] == "Frau", "Geschlecht"] = "w"
+    df['Aktiv'] = df["Aktiv"].replace({"ja": True, "nein": False})
     df["Firma"].replace({float('nan'): None}, inplace=True)
-    print(df)
+    df["Quellsystem"] = os.path.basename(path)
+    # print(df)
     return df
     # insert_dataframe(df, "kunden_csv")
 
 
 @task
-def load_excel_to_mysql(excel_path) -> pd.DataFrame:
+def load_excel_to_mysql(path) -> pd.DataFrame:
     """
     loads excel from given path, with transformations to send to mysql
-    :param excel_path: file path for excel
+    :param path: file path for excel
     :return: transformed dataframe
     """
-    df = pd.read_excel(excel_path)
+    df = pd.read_excel(path)
     df = df.rename(columns={"Email": "EMail", "Adresse": "Strasse"})
     df['Aktiv'] = df["Aktiv"].replace({"ja": True, "nein": False})
     df['Hausnummer'] = df['Strasse'].str.rsplit(" ", n=1, expand=True)[1]
     df['Strasse'] = df['Strasse'].str.rsplit(" ", n=1, expand=True)[0]
     df['Firma'] = df["Firma"].replace({float('nan'): None})
-    print(df)
+    df["Quellsystem"] = os.path.basename(path)
+    # print(df)
     # insert_dataframe(df, "kunden_excel")
     return df
 
 
 @task
-def load_json_to_mysql(json_path) -> pd.DataFrame:
+def load_json_to_mysql(path) -> pd.DataFrame:
     """
     loads json from given path, with transformations to send to mysql
-    :param json_path: file path for json
+    :param path: file path for json
     :return: transformed dataframe
     """
     print("in load_json_to_mysql")
-    with open(json_path, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     df = pd.json_normalize(data)
     df = df.rename(columns={"kundennr": "KundenID", "vorname": "Vorname", "nachname": "Nachname",
@@ -66,7 +71,8 @@ def load_json_to_mysql(json_path) -> pd.DataFrame:
     df['Hausnummer'] = df['Strasse'].str.rsplit(" ", n=1, expand=True)[1]
     df['Strasse'] = df['Strasse'].str.rsplit(" ", n=1, expand=True)[0]
     df['Firma'] = df["Firma"].replace({"": None})
-    print(df)
+    df["Quellsystem"] = os.path.basename(path)
+    # print(df)
     # insert_dataframe(df, "kunden_json")
     return df
 
@@ -102,7 +108,8 @@ def init_schema() -> pd.DataFrame:
         "Strasse",
         "Hausnummer",
         "Land",
-        "Firma"
+        "Firma",
+        "Quellsystem"
     ]
     return pd.DataFrame(columns=schema)
 
@@ -116,6 +123,8 @@ def load_all_sources():
 
     combined_df = pd.concat([csv_df, excel_df, json_df], ignore_index=True)
     print(combined_df)
+
+    insert_dataframe(combined_df, "Kunde")
 
 
 if __name__ == "__main__":
