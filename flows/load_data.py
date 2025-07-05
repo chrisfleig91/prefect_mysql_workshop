@@ -66,6 +66,7 @@ def insert_dataframe(df, table_name):
     placeholders = ", ".join(["%s"] * len(df.columns))
 
     sql = f"INSERT INTO {table_name} ({cols}) VALUES ({placeholders})"
+    # df.to_sql()
 
     for _, row in df.iterrows():
         cursor.execute(sql, tuple(row))
