@@ -57,6 +57,7 @@ def load_json(path) -> pd.DataFrame:
     return df
 
 
+@task
 def insert_dataframe(df, table_name):
     conn = mysql.connector.connect(**DB_CONFIG)
     cursor = conn.cursor()
